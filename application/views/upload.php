@@ -173,16 +173,52 @@
         </div>
 
         <div class="panel-body">
-          <label>UPLOAD DATA DENGAN CSV FILE</label>
-          <input type="file" name="csvupload" value="">
+
+          <div class="container" style="margin-top:50px">
+            <br>
+
+            <?php if (isset($error)): ?>
+              <div class="alert alert-error">
+                <?php echo $error; ?>
+              </div>
+              <?php endif; ?>
+                <?php if ($this->session->flashdata('success') == TRUE): ?>
+                  <div class="alert alert-success">
+                    <?php echo $this->session->flashdata('success'); ?>
+                  </div>
+                  <?php endif; ?>
+
+                    <h2>CI Addressbook Import</h2>
+                    <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadMahasiswa" enctype="multipart/form-data">
+                      <input type="file" name="userfile">
+                      <br>
+                      <br>
+                      <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
+                    </form>
+
+                    <br>
+                    <br>
+                    <table class="table table-striped table-hover table-bordered">
+                      <caption>Address Book List</caption>
+                      <thead>
+                        <tr>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Phone</th>
+                          <th>Email</th>
+                        </tr>
+                      </thead>
+
+                    </table>
+
+          </div>
         </div>
+
+
+
       </div>
 
-
-
     </div>
-
-  </div>
 
 
   </div>
