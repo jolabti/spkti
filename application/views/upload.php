@@ -188,8 +188,8 @@
                   </div>
                   <?php endif; ?>
 
-                    <h2>CI Addressbook Import</h2>
-                    <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadMahasiswa" enctype="multipart/form-data">
+                    <h2>UPLOAD DATA CALAS</h2>
+                    <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadRekapitulasiPenilaian" enctype="multipart/form-data">
                       <input type="file" name="userfile">
                       <br>
                       <br>
@@ -199,15 +199,29 @@
                     <br>
                     <br>
                     <table class="table table-striped table-hover table-bordered">
-                      <caption>Address Book List</caption>
+                      <caption>Penilaian Calas</caption>
                       <thead>
                         <tr>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Phone</th>
-                          <th>Email</th>
+                          <th>NPM</th>
+                          <th>Nama Calas</th>
+                          <th>Kelas</th>
+                          <th>Nilai Teori</th>
+                          <th>Nilai Praktek</th>
+                          <th>Nilai Wawancara</th>
+                          <th>Nilai Presentasi</th>
                         </tr>
                       </thead>
+                      <tbody>
+                        <tr>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                          <td>sfsdf                     </td>
+                        </tr>
+                      </tbody>
 
                     </table>
 

@@ -9,6 +9,9 @@ class Spkcontroller extends CI_Controller {
 			 $this->load->library('CSVReader');
 
 	 }
+
+
+
 																								public function index()
 																								{
 																									$this->load->view('home');
@@ -33,7 +36,7 @@ class Spkcontroller extends CI_Controller {
 
 
 
-																								    public function uploadMahasiswa()
+																								    public function uploadRekapitulasiPenilaian()
 																								    {
 																								        $config['upload_path']   = './uploads/';
 																								        $config['allowed_types'] = '*';
@@ -50,20 +53,50 @@ class Spkcontroller extends CI_Controller {
 																								            $result = $this->csvreader->parse_file($file_path);
 																								            foreach ($result as $row) {
 																								                $val = array(
-																								                    'id'   => $row['npm'],
-																								                    'firstname'  => $row['nama'],
-																								                    'lastname' => $row['kelas'],
-																								                    'phone' => $row['phone'],
-																								                    'email' => $row['email']
+																								                    'npm'   => $row['npm'],
+																								                    'nama_calas'  => $row['nama_calas'],
+																								                    'kelas' => $row['kelas'],
+																								                    'nilai_teori' => $row['nilai_teori'],
+																								                    'nilai_praktek' => $row['nilai_praktek'],
+																								                    'nilai_wawancara' => $row['nilai_wawancara'],
+																								                    'nilai_presentasi' => $row['nilai_presentasi']
+
 																								                );
 
 																								                $this->dbmodel->insert_csv($val);
 																								            }
 
 
-																								            redirect('mahasiswa');
+																								            redirect('spkcontroller');
 																								        }
 																								    }
+
+
+
+   function c_olahbobotkriteria(){
+
+			$data= $this->dbmodel->m_sumbobotkriteria();
+
+			$bobotCollect = $this->dbmodel->m_databobotkriteria();
+			//print_r($data[0]);
+			$hasil = $data[0] ;
+		  //echo $hasil->score ;
+			foreach ($bobotCollect as $key ) {
+
+						$tampil= $key->bobot/$hasil->score;
+
+						echo $tampil;
+			}
+
+	 }
+
+	 function c_prosesWP(){
+
+
+
+	 }
+
+
 
 
 
