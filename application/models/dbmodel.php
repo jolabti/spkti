@@ -41,6 +41,33 @@ class Dbmodel extends CI_Model {
 
     }
 
+    function m_dataKriteriaTeori(){
+      $this->db->Select('bobot');
+      $this->db->from('Teori');
+      $query = $this->db->get();
+      return $result = $query->result();
+    }
+
+    function m_dataKriteriaPraktek(){
+      $this->db->Select('bobot');
+      $this->db->from('Kriteria_Praktek');
+      $query = $this->db->get();
+      return $result = $query->result();
+    }
+
+    function m_dataKriteriaWawancara(){
+      $this->db->Select('bobot');
+      $this->db->from('Kriteria_Wawancara');
+      $query = $this->db->get();
+      return $result = $query->result();
+    }
+    function m_dataKriteriaPresentasi(){
+      $this->db->Select('bobot');
+      $this->db->from('Kriteria_Presentasi');
+      $query = $this->db->get();
+      return $result = $query->result();
+    }
+
 
     //==================================== Database model for algorithm
     function m_getDataPenilaian(){
