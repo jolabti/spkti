@@ -16,12 +16,33 @@ class Dbmodel extends CI_Model {
         $this->db->insert('penilaian', $data);
     }
 
+    /*Ambil data bobot Criteria*/
+
+      function m_databobotPraktek( ){
+
+          $query=$this->db->select('bobot')->from('Kriteria_Praktek');
+          return $query->result();
+      }
+
+      function m_databobotTeori(){
+
+        $this->db->Select('bobot');
+        $this->db->from('Teori');
+        $query = $this->db->get();
+        return $result = $query->result();
+      }
+
+
+
+    /*=============================*/
+
 
 
     /*
       PROSES PERHITUNGAN ALGORITMA
       ========================
     */
+
 
 
     function m_sumbobotkriteria(){
@@ -70,7 +91,7 @@ class Dbmodel extends CI_Model {
 
 
     //==================================== Database model for algorithm
-    function m_getDataPenilaian(){
+    function m_getDataPenilaian( ){
 
        $query = $this->db->get('penilaian');
 

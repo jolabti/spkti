@@ -9,7 +9,7 @@
   <meta name="author" content="">
 
 
-  <title>UGLabti-Sistem Penunjang Keputusan</title>
+  <title>UGLabti-Sistem Penunjang Keputusan</title>b
 
   <!-- Bootstrap core CSS -->
   <link href="<?php echo base_url();?>css/bootstrap.css" rel="stylesheet">
@@ -153,7 +153,7 @@
     <div id="sidebar">
       <ul class="list-group" style="background:black;">
         <li class="list-group-item"><a href="<?php echo base_url();?>index.php/spkcontroller/kriteria">Kriteria</a></li>
-        <li class="list-group-item"><a href="<?php echo base_url();?>index.php/spkcontroller/uploadview">Upload Data Calas</a></li>
+        <li class="list-group-item"><a href="<?php echo base_url();?>index.php/spkcontroller/get_data_penelitian">Upload Data Calas</a></li>
         <li class="list-group-item"><a href="#">Bobot Kriteria</a></li>
         <li class="list-group-item"><a href="#">Laporan Olah Data</a></li>
         <li class="list-group-item"><a href="#">Report bug</a></li>

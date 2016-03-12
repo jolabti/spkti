@@ -66,7 +66,7 @@ class Spkcontroller extends CI_Controller {
 																}
 
 
-																redirect('spkcontroller');
+																redirect('spkcontroller/get_data_penelitian');
 														}
 												}
 
@@ -74,20 +74,35 @@ class Spkcontroller extends CI_Controller {
 
    function c_olahbobotkriteria(){
 
-			$data= $this->dbmodel->m_sumbobotkriteria();
+			$data = $this->dbmodel->m_sumbobotkriteria();
 
-			$bobotCollect = $this->dbmodel->m_databobotkriteria();
+			$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
 			//print_r($data[0]);
-			$hasil = $data[0] ;
-		  //echo $hasil->score ;
-			foreach ($bobotCollect as $key ) {
+			// $hasil = $data[0] ;
+		  // //echo $hasil->score ;
+			// foreach ($bobotCollect as $key ) {
+			//
+			// 			$tampil= $key->bobot/$hasil->score;
+			//
+			// 			echo $tampil;
+			// }
 
-						$tampil= $key->bobot/$hasil->score;
 
-						echo $tampil;
-			}
 
 	 }
+
+	 function get_data_penelitian(){
+		 $data = $this->dbmodel->m_sumbobotkriteria();
+
+		 $data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
+
+				$data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
+				$data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
+
+
+				$this->load->view('upload',$data);
+	 }
+
 
 //================================================================================
 
@@ -99,91 +114,27 @@ class Spkcontroller extends CI_Controller {
 //================================================================================
 // Controller Untuk Memproses Algoritma Weighted Produk
 	 function c_prosesWP(){
+		//   $dataKriteriaTeori= $this->dbmodel->m_dataKriteriaTeori();
+		//   $dataKriteriaPraktek= $this->dbmodel->m_dataKriteriaPraktek();
+		//   $dataKriteriaWawancara= $this->dbmodel->m_dataKriteriaWawancara();
+		//   $dataKriteriaPresentasi= $this->dbmodel->m_dataKriteriaPresentasi();
+		//  $dataPenilaian= $this->dbmodel->m_getDataPenilaian();
+		 //
+		//  $dataPenilaianTeori= $this->dbmodel->m_getDataTeori();
+		 //
+		//  $dataPenilaianPraktek= $this->dbmodel->m_getDataPraktek();
+		 //
+		//  $dataPenilaianWawancara= $this->dbmodel->m_getDataWawancara();
+		 //
+		//  $dataPenilaianPresentasi= $this->dbmodel->m_getDataPresentasi();
+
+		$data= $this->dbmodel->m_getDataPenilaian();
+
+		 foreach ($variable as $key) {
+		 	# code...
+		 }
 
 
-		  $dataKriteriaTeori= $this->dbmodel->m_dataKriteriaTeori();
-		  $dataKriteriaPraktek= $this->dbmodel->m_dataKriteriaPraktek();
-		  $dataKriteriaWawancara= $this->dbmodel->m_dataKriteriaWawancara();
-		  $dataKriteriaPresentasi= $this->dbmodel->m_dataKriteriaPresentasi();
-
- 		 //---------------------------------------------------------
-
-		 $dataPenilaian= $this->dbmodel->m_getDataPenilaian();
-		// print_r($dataPenilaian);
-		 $dataPenilaianTeori= $this->dbmodel->m_getDataTeori();
-		// print_r($dataPenilaianTeori);
-		 $dataPenilaianPraktek= $this->dbmodel->m_getDataPraktek();
-		// print_r($dataPenilaianPraktek);
-		 $dataPenilaianWawancara= $this->dbmodel->m_getDataWawancara();
-		// print_r($dataPenilaianWawancara);
-		 $dataPenilaianPresentasi= $this->dbmodel->m_getDataPresentasi();
-		// print_r($dataPenilaianPresentasi);
-
-
-		foreach ($dataPenilaian as $dPn) {
-			# iterasi untuk memanggil isi database dan diperbandingkan
-		  if ($dPn->nilai_teori < 51){
-
-									$anlisTeori= 0.25;
-
-			}elseif ($dPn->nilai_teori > 50 && $dPn->nilai_teori < 71) {
-
-									$anlisTeori= 0.50;
-
-			}
-
-		elseif ($dPn->nilai_teori > 71 && $dPn->nilai_teori < 81) {
-
-									$anlisTeori= 0.75;
-
-			}
-
-		elseif ($dPn->nilai_teori > 80 && $dPn->nilai_teori <= 100) {
-
-									$anlisTeori= 1.00;
-
-			}
-
-
-			if ($dPn->nilai_praktek < 51){
-
-									$anlisPraktek= 0.25;
-
-			}elseif ($dPn->nilai_praktek > 50 && $dPn->nilai_praktek < 71) {
-
-									$anlisPraktek= 0.50;
-
-			}
-
-		elseif ($dPn->nilai_praktek > 71 && $dPn->nilai_praktek < 81) {
-
-									$anlisPraktek= 0.75;
-
-			}
-
-		elseif ($dPn->nilai_praktek > 80 && $dPn->nilai_praktek <= 100) {
-
-									$anlisPraktek= 1.00;
-
-			}
-
-			echo "NILAI Teori";
-			echo $dPn->nilai_teori;
-					echo "       ";
-			echo "===>";
-			echo "       ";
-			 echo $anlisTeori;
-
-
-			 echo "NILAI PRAKTEK";
-			 echo $dPn->nilai_praktek;
- 					echo "       ";
- 			echo "===>";
- 			echo "       ";
- 			 echo $anlisPraktek;
-
-
-	 }
  }
 
 
