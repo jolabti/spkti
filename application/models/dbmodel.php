@@ -83,10 +83,11 @@ class Dbmodel extends CI_Model {
       return $result = $query->result();
     }
     function m_dataKriteriaPresentasi(){
-      $this->db->Select('bobot');
-      $this->db->from('Kriteria_Presentasi');
-      $query = $this->db->get();
-      return $result = $query->result();
+      //$this->db->Select('bobot');
+      // $this->db->from('Kriteria_Presentasi');
+      // $query = $this->db->get();
+      // return $result = $query->result();
+      return $this->db->get('Kriteria_Presentasi')->result();
     }
 
 

@@ -92,13 +92,11 @@ class Spkcontroller extends CI_Controller {
 	 }
 
 	 function get_data_penelitian(){
-		 $data = $this->dbmodel->m_sumbobotkriteria();
-
-		 $data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
-
+		 		$data = $this->dbmodel->m_sumbobotkriteria();
+		 		$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
 				$data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
 				$data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
-
+				$data['presentasi'] = $this->dbmodel->m_dataKriteriaPresentasi();
 
 				$this->load->view('upload',$data);
 	 }

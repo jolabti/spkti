@@ -308,29 +308,35 @@
 
                               <?php
 
-                              if ($dPen->nilai_presentasi <26)
-                              {
-                                  $hasi=0.25;
-
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=26 && $dPen->nilai_presentasi <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=51 && $dPen->nilai_presentasi <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=71 && $dPen->nilai_presentasi <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
+                              foreach ($presentasi as $p) {
+                                //echo $dPen->nilai_presentasi;
+                                  if($dPen->nilai_presentasi >= $p->batas_atas and $dPen->nilai_presentasi <= $p->batas_bawah){
+                                    echo $p->bobot;
+                                    break;
+                                  }
                               }
 
-
+                              // if ($dPen->nilai_presentasi <26)
+                              // {
+                              //     $hasi=0.25;
+                              //
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_presentasi >=26 && $dPen->nilai_presentasi <=50)
+                              // {
+                              //     $hasi=0.5;
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_presentasi >=51 && $dPen->nilai_presentasi <=70)
+                              // {
+                              //     $hasi=0.75;
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_presentasi >=71 && $dPen->nilai_presentasi <=100)
+                              // {
+                              //     $hasi=1.00;
+                              //     echo (float) $hasi;
+                              // }
 
                                ?>
                             </td>
