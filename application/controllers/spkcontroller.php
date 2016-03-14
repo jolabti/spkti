@@ -97,6 +97,7 @@ class Spkcontroller extends CI_Controller {
 				$data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
 				$data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
 				$data['presentasi'] = $this->dbmodel->m_dataKriteriaPresentasi();
+				$data['wawancara'] = $this->dbmodel->m_dataKriteriaWawancara();
 
 				$this->load->view('upload',$data);
 	 }

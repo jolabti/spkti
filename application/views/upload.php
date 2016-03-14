@@ -278,26 +278,36 @@
                             <td>
                               <?php
 
-                              if ($dPen->nilai_wawancara <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
+                              // if ($dPen->nilai_wawancara <26)
+                              // {
+                              //     $hasi=0.25;
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_wawancara >=26 && $dPen->nilai_wawancara <=50)
+                              // {
+                              //     $hasi=0.5;
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_wawancara >=51 && $dPen->nilai_wawancara <=70)
+                              // {
+                              //     $hasi=0.75;
+                              //     echo (float) $hasi;
+                              // }
+                              // else if ($dPen->nilai_wawancara >=71 && $dPen->nilai_wawancara <=100)
+                              // {
+                              //     $hasi=1.00;
+                              //     echo (float) $hasi;
+                              // }
+
+
+                              foreach ($wawancara as $w) {
+                                //echo $dPen->nilai_presentasi;
+                                  if($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah){
+                                    echo $w->bobot;
+                                    break;
+                                  }
                               }
-                              else if ($dPen->nilai_wawancara >=26 && $dPen->nilai_wawancara <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_wawancara >=51 && $dPen->nilai_wawancara <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_wawancara >=71 && $dPen->nilai_wawancara <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
+
 
 
 

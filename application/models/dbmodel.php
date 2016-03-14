@@ -77,10 +77,10 @@ class Dbmodel extends CI_Model {
     }
 
     function m_dataKriteriaWawancara(){
-      $this->db->Select('bobot');
-      $this->db->from('Kriteria_Wawancara');
-      $query = $this->db->get();
-      return $result = $query->result();
+      // $this->db->Select('bobot');
+      // $this->db->from('Kriteria_Wawancara');
+      // $query = $this->db->get();
+      return $this->db->get('Kriteria_Wawancara')->result();
     }
     function m_dataKriteriaPresentasi(){
       //$this->db->Select('bobot');
