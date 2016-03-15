@@ -76,28 +76,30 @@ class Spkcontroller extends CI_Controller {
 
 			$data = $this->dbmodel->m_sumbobotkriteria();
 
-			$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
+			$budi = $this->dbmodel->m_databobotkriteria();
 			//print_r($data[0]);
-			// $hasil = $data[0] ;
-		  // //echo $hasil->score ;
-			// foreach ($bobotCollect as $key ) {
-			//
-			// 			$tampil= $key->bobot/$hasil->score;
-			//
-			// 			echo $tampil;
-			// }
+			$hasil = $data[0] ;
+		  //echo $hasil->score ;
+			foreach ($budi as $key ) {
 
+						$tampil= $key->bobot/$hasil->score;
 
-
+						echo $tampil;
+			}
 	 }
 
 	 function get_data_penelitian(){
-		 		$data = $this->dbmodel->m_sumbobotkriteria();
+		 		$data['jumlahbobot'] = $this->dbmodel->m_sumbobotkriteria();
 		 		$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
 				$data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
 				$data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
+
 				$data['presentasi'] = $this->dbmodel->m_dataKriteriaPresentasi();
 				$data['wawancara'] = $this->dbmodel->m_dataKriteriaWawancara();
+				$data['praktek'] = $this->dbmodel->m_dataKriteriaPraktek();
+				$data['teori'] = $this->dbmodel->m_dataKriteriaTeori();
+
+				//Bobot Global Criteria
 
 				$this->load->view('upload',$data);
 	 }

@@ -63,17 +63,16 @@ class Dbmodel extends CI_Model {
     }
 
     function m_dataKriteriaTeori(){
-      $this->db->Select('bobot');
-      $this->db->from('Teori');
-      $query = $this->db->get();
-      return $result = $query->result();
+        return $this->db->get('Teori')->result();
     }
 
     function m_dataKriteriaPraktek(){
-      $this->db->Select('bobot');
-      $this->db->from('Kriteria_Praktek');
-      $query = $this->db->get();
-      return $result = $query->result();
+      // $this->db->Select('bobot');
+      // $this->db->from('Kriteria_Praktek');
+      // $query = $this->db->get();
+      // return $result = $query->result();
+
+      return $this->db->get('Kriteria_Praktek')->result();
     }
 
     function m_dataKriteriaWawancara(){

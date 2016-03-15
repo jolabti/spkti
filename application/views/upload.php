@@ -201,6 +201,8 @@
                     <table class="table table-striped table-hover table-bordered">
                       <caption>Penilaian Calas</caption>
                       <thead>
+
+
                         <tr>
                           <th>NPM  </th>
                           <th>Nama Calas  </th>
@@ -209,11 +211,12 @@
                           <th>Nilai Praktek (C2)</th>
                           <th>Nilai Wawancara (C3)</th>
                           <th>Nilai Presentasi (C4)  </th>
+                          <th> Hasil               </th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php  foreach ($dataPenilaian as $dPen) {
-
+                            $jumlah = $jumlahbobot[0]->score;
                           ?>
 
                           <tr>
@@ -227,77 +230,46 @@
                               <?php print $dPen->kelas; ?>
                             </td>
                             <td>
-                              <?php if ($dPen->nilai_teori <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
+                              <?php
+
+                              foreach ($teori as $t) {
+                                //echo $dPen->nilai_presentasi;
+                                  if($dPen->nilai_teori >= $t->batas_atas and $dPen->nilai_teori <= $t->batas_bawah){
+                                    $bobotBagi = $t->bobot / $jumlah;
+                                    $hasilAkhir = round(pow($dPen->nilai_teori, $bobotBagi), 3);
+                                    echo $t->bobot;
+                                    echo "<br/>";
+                                    echo $jumlah;
+                                    echo "<br/>";
+                                    echo $hasilAkhir;
+                                    break;
+                                  }
                               }
-                              else if ($dPen->nilai_teori >=26 && $dPen->nilai_teori <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_teori >=51 && $dPen->nilai_teori <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_teori >=71 && $dPen->nilai_teori <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
+
                               ?>
                             </td>
                             <td>
                               <?php
 
-                              if ($dPen->nilai_praktek <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
+                              foreach ($praktek as $p) {
+                                //echo $dPen->nilai_presentasi;
+                                  if($dPen->nilai_praktek >= $p->batas_atas and $dPen->nilai_praktek <= $p->batas_bawah){
+                                    $bobotBagiP = $p->bobot / $jumlah;
+                                    $hasilAkhirP = round(pow($dPen->nilai_praktek, $bobotBagiP), 3);
+                                    echo $p->bobot;
+                                    echo "<br/>";
+                                    echo $jumlah;
+                                    echo "<br/>";
+                                    echo $hasilAkhirP;
+                                    break;
+                                  }
                               }
-                              else if ($dPen->nilai_praktek >=26 && $dPen->nilai_praktek <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_praktek >=51 && $dPen->nilai_praktek <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_praktek >=71 && $dPen->nilai_praktek <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
+
                                ?>
 
                             </td>
                             <td>
                               <?php
-
-                              // if ($dPen->nilai_wawancara <26)
-                              // {
-                              //     $hasi=0.25;
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_wawancara >=26 && $dPen->nilai_wawancara <=50)
-                              // {
-                              //     $hasi=0.5;
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_wawancara >=51 && $dPen->nilai_wawancara <=70)
-                              // {
-                              //     $hasi=0.75;
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_wawancara >=71 && $dPen->nilai_wawancara <=100)
-                              // {
-                              //     $hasi=1.00;
-                              //     echo (float) $hasi;
-                              // }
 
 
                               foreach ($wawancara as $w) {
@@ -351,11 +323,11 @@
                                ?>
                             </td>
 
+
+
                           </tr>
 
                           <?php }?>
-
-
                       </tbody>
                         <!-- <div class="halaman">Halaman : < /div> -->
                     </table>
@@ -366,151 +338,6 @@
 
 
 
-                    <table class="table table-striped table-hover table-bordered">
-                      <caption>Penilaian Calas</caption>
-                      <thead>
-                        <tr>
-                          <th>NPM  </th>
-                          <th>Nama Calas  </th>
-                          <th>Kelas  </th>
-                          <th>Nilai Teori (C1)</th>
-                          <th>Nilai Praktek (C2)</th>
-                          <th>Nilai Wawancara (C3)</th>
-                          <th>Nilai Presentasi (C4)  </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php  foreach ($dataPenilaian as $dPen) {
-
-                          ?>
-
-                          <tr>
-                            <td>
-                              <?php print $dPen->npm; ?>
-                            </td>
-                            <td>
-                              <?php print $dPen->nama_calas; ?>
-                            </td>
-                            <td>
-                              <?php print $dPen->kelas; ?>
-                            </td>
-                            <td>
-                              <?php if ($dPen->nilai_teori <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_teori >=26 && $dPen->nilai_teori <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_teori >=51 && $dPen->nilai_teori <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_teori >=71 && $dPen->nilai_teori <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
-                              ?>
-                            </td>
-                            <td>
-                              <?php
-
-                              if ($dPen->nilai_praktek <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_praktek >=26 && $dPen->nilai_praktek <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_praktek >=51 && $dPen->nilai_praktek <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_praktek >=71 && $dPen->nilai_praktek <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
-                               ?>
-
-                            </td>
-                            <td>
-                              <?php
-
-                              if ($dPen->nilai_wawancara <26)
-                              {
-                                  $hasi=0.25;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_wawancara >=26 && $dPen->nilai_wawancara <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_wawancara >=51 && $dPen->nilai_wawancara <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_wawancara >=71 && $dPen->nilai_wawancara <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
-
-
-
-                               ?>
-
-                            </td>
-                            <td>
-
-                              <?php
-
-                              if ($dPen->nilai_presentasi <26)
-                              {
-                                  $hasi=0.25;
-
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=26 && $dPen->nilai_presentasi <=50)
-                              {
-                                  $hasi=0.5;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=51 && $dPen->nilai_presentasi <=70)
-                              {
-                                  $hasi=0.75;
-                                  echo (float) $hasi;
-                              }
-                              else if ($dPen->nilai_presentasi >=71 && $dPen->nilai_presentasi <=100)
-                              {
-                                  $hasi=1.00;
-                                  echo (float) $hasi;
-                              }
-
-
-
-                               ?>
-                            </td>
-
-                          </tr>
-
-                          <?php }?>
-
-
-                      </tbody>
-                        <!-- <div class="halaman">Halaman : <?php echo $halaman; ?></div> -->
-                    </table>
 
 
 
