@@ -275,7 +275,13 @@
                               foreach ($wawancara as $w) {
                                 //echo $dPen->nilai_presentasi;
                                   if($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah){
+                                    $bobotBagiW = $w->bobot / $jumlah;
+                                    $hasilAkhirW = round(pow($dPen->nilai_praktek, $bobotBagiP), 3);
                                     echo $w->bobot;
+                                    echo "<br/>";
+                                    echo $jumlah;
+                                    echo "<br/>";
+                                    echo $hasilAkhirW;
                                     break;
                                   }
                               }
@@ -293,7 +299,13 @@
                               foreach ($presentasi as $p) {
                                 //echo $dPen->nilai_presentasi;
                                   if($dPen->nilai_presentasi >= $p->batas_atas and $dPen->nilai_presentasi <= $p->batas_bawah){
+                                    $bobotBagiPr = $p->bobot / $jumlah;
+                                    $hasilAkhirPr = round(pow($dPen->nilai_presentasi, $bobotBagiPr), 3);
                                     echo $p->bobot;
+                                    echo "<br/>";
+                                    echo $jumlah;
+                                    echo "<br/>";
+                                    echo $hasilAkhirPr;
                                     break;
                                   }
                               }
@@ -322,7 +334,13 @@
 
                                ?>
                             </td>
+                            <td>
+                              <?php
+                                $hasilKaliAll =$hasilAkhir*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
 
+
+                                echo round($hasilKaliAll,4);?>
+                            </td>
 
 
                           </tr>
