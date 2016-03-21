@@ -90,7 +90,7 @@ class Spkcontroller extends CI_Controller {
 
 	 function get_data_penelitian(){
 		 		$data['jumlahbobot'] = $this->dbmodel->m_sumbobotkriteria();
-		 		$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria();
+		 		$data['bobotCollect'] = $this->dbmodel->m_databobotkriteria(); //Bobot Kriteria
 				$data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
 				$data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
 
@@ -98,11 +98,10 @@ class Spkcontroller extends CI_Controller {
 				$data['wawancara'] = $this->dbmodel->m_dataKriteriaWawancara();
 				$data['praktek'] = $this->dbmodel->m_dataKriteriaPraktek();
 				$data['teori'] = $this->dbmodel->m_dataKriteriaTeori();
-
 				//Bobot Global Criteria
-
 				$this->load->view('upload',$data);
-	 }
+
+				 }
 
 
 //================================================================================

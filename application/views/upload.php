@@ -212,6 +212,7 @@
                           <th>Nilai Wawancara (C3)</th>
                           <th>Nilai Presentasi (C4)  </th>
                           <th> Hasil               </th>
+                          <th> Vi              </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -231,55 +232,77 @@
                             </td>
                             <td>
                               <?php
+                              $bobotAsal = $bobotCollect[0]->bobot;
 
                               foreach ($teori as $t) {
                                 //echo $dPen->nilai_presentasi;
+
+
                                   if($dPen->nilai_teori >= $t->batas_atas and $dPen->nilai_teori <= $t->batas_bawah){
-                                    $bobotBagi = $t->bobot / $jumlah;
-                                    $hasilAkhir = round(pow($dPen->nilai_teori, $bobotBagi), 3);
-                                    echo $t->bobot;
+                                    $bobotBagi = $bobotAsal / $jumlah;
+                                    $hasilAkhirT  = round(pow($t->bobot, $bobotBagi), 3);
+
+                                    echo $t->bobot . 'Nilai Bobot Teori';
                                     echo "<br/>";
-                                    echo $jumlah;
+                                    echo $bobotAsal . 'bobot asal';
                                     echo "<br/>";
-                                    echo $hasilAkhir;
+
+                                    echo $bobotBagi . 'bobot bagi Teori' ;
+                                    echo "<br/>";
+
+                                    echo $jumlah . 'jumlah';
+                                    echo "<br/>";
+                                    echo $hasilAkhirT;
                                     break;
                                   }
                               }
+                                $bobotAsal=0;
+
 
                               ?>
                             </td>
                             <td>
                               <?php
-
+                              $bobotAsal = $bobotCollect[1]->bobot;
                               foreach ($praktek as $p) {
                                 //echo $dPen->nilai_presentasi;
                                   if($dPen->nilai_praktek >= $p->batas_atas and $dPen->nilai_praktek <= $p->batas_bawah){
-                                    $bobotBagiP = $p->bobot / $jumlah;
-                                    $hasilAkhirP = round(pow($dPen->nilai_praktek, $bobotBagiP), 3);
-                                    echo $p->bobot;
+                                    $bobotBagiP = $bobotAsal / $jumlah;
+                                    $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
+                                    echo $p->bobot .'bobot Kriteria Praktek';
                                     echo "<br/>";
-                                    echo $jumlah;
+
+                                    echo $bobotAsal .'bobot Asal';
+                                    echo "<br/>";
+
+                                    echo $bobotBagiP .'bobot bagi Presentasi';
+                                    echo "<br/>";
+                                    echo $jumlah ."jumlah bobot kriteria";
                                     echo "<br/>";
                                     echo $hasilAkhirP;
                                     break;
                                   }
                               }
-
+                                  $bobotAsal=0;
                                ?>
 
                             </td>
                             <td>
                               <?php
 
-
+                              $bobotAsal=$bobotCollect[2]->bobot;;
                               foreach ($wawancara as $w) {
                                 //echo $dPen->nilai_presentasi;
                                   if($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah){
-                                    $bobotBagiW = $w->bobot / $jumlah;
-                                    $hasilAkhirW = round(pow($dPen->nilai_praktek, $bobotBagiP), 3);
-                                    echo $w->bobot;
+                                    $bobotBagiW = $bobotAsal / $jumlah;
+                                    $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
+                                    echo $w->bobot .'Bobot Kriteria';
                                     echo "<br/>";
-                                    echo $jumlah;
+                                    echo $bobotAsal .'Bobot Asal';
+                                    echo "<br/>";
+                                    echo $bobotBagiW .'bobot bagi Wawancara';
+                                    echo "<br/>";
+                                    echo $jumlah ."jumlah bobot kriteria";
                                     echo "<br/>";
                                     echo $hasilAkhirW;
                                     break;
@@ -288,61 +311,42 @@
 
 
 
-
+                              $bobotAsal=0;
                                ?>
 
                             </td>
                             <td>
 
                               <?php
-
-                              foreach ($presentasi as $p) {
+                              $bobotAsal=$bobotCollect[3]->bobot;
+                              foreach ($presentasi as $pr) {
                                 //echo $dPen->nilai_presentasi;
-                                  if($dPen->nilai_presentasi >= $p->batas_atas and $dPen->nilai_presentasi <= $p->batas_bawah){
-                                    $bobotBagiPr = $p->bobot / $jumlah;
-                                    $hasilAkhirPr = round(pow($dPen->nilai_presentasi, $bobotBagiPr), 3);
-                                    echo $p->bobot;
+                                  if($dPen->nilai_presentasi >= $pr->batas_atas and $dPen->nilai_presentasi <= $pr->batas_bawah){
+                                    $bobotBagiPr = $bobotAsal / $jumlah;
+                                    $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
+                                    echo $pr->bobot ."Bobot Kriteria Presentasi";
                                     echo "<br/>";
-                                    echo $jumlah;
+                                    echo $bobotBagiPr ."bobotBagiPr";
+                                    echo "<br/>";
+                                    echo $bobotAsal ."Bobot Asal";
+                                    echo "<br/>";
+                                    echo $jumlah ."jumlah bobot kriteria";
                                     echo "<br/>";
                                     echo $hasilAkhirPr;
                                     break;
                                   }
                               }
-
-                              // if ($dPen->nilai_presentasi <26)
-                              // {
-                              //     $hasi=0.25;
-                              //
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_presentasi >=26 && $dPen->nilai_presentasi <=50)
-                              // {
-                              //     $hasi=0.5;
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_presentasi >=51 && $dPen->nilai_presentasi <=70)
-                              // {
-                              //     $hasi=0.75;
-                              //     echo (float) $hasi;
-                              // }
-                              // else if ($dPen->nilai_presentasi >=71 && $dPen->nilai_presentasi <=100)
-                              // {
-                              //     $hasi=1.00;
-                              //     echo (float) $hasi;
-                              // }
-
                                ?>
                             </td>
                             <td>
                               <?php
-                                $hasilKaliAll =$hasilAkhir*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
-
-
+                                $hasilKaliAll =$hasilAkhirT*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
                                 echo round($hasilKaliAll,4);?>
+                                <!-- Mencetak hasil perkalian Si -->
                             </td>
+                          <td>
 
-
+                          </td>
                           </tr>
 
                           <?php }?>
@@ -375,20 +379,6 @@
 
 
   </div>
-  <!-- /.container -->
-<!--
-  <div id="footer">
-    <div class="container">
-      <p class="muted credit">Programmed by: <a href="http://martinbean.co.uk">Johan Nainggolan</a> and <a href="http://ryanfait.com/sticky-footer/">Ryan Fait</a>.</p>
-    </div>
-  </div> -->
-
-
-
-  <!-- Bootstrap core JavaScript
-    ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <!-- <script src=" js/jquery.js"></script> -->
 
   <script>
     $("#right").click(function() {
@@ -410,7 +400,6 @@
     });
   </script>
   <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 
 </body>
 
