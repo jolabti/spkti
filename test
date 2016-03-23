@@ -1,0 +1,50 @@
+<?php
+$hasilKaliAll = 1;
+foreach ($dataPenilaian as $dPen) {
+  $jumlah = $jumlahbobot[0]->score;
+
+      $bobotAsal = $bobotCollect[0]->bobot;
+
+      foreach ($teori as $t) {
+
+        if($dPen->nilai_teori >= $t->batas_atas and $dPen->nilai_teori <= $t->batas_bawah){
+          $bobotBagi = $bobotAsal / $jumlah;
+          $hasilAkhirT  = round(pow($t->bobot, $bobotBagi), 3);
+          break;
+        }
+      }
+      $bobotAsal=0;
+
+      $bobotAsal = $bobotCollect[1]->bobot;
+      foreach ($praktek as $p) {
+        if($dPen->nilai_praktek >= $p->batas_atas and $dPen->nilai_praktek <= $p->batas_bawah){
+          $bobotBagiP = $bobotAsal / $jumlah;
+          $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
+          break;
+        }
+      }
+      $bobotAsal=0;
+
+      $bobotAsal=$bobotCollect[2]->bobot;;
+      foreach ($wawancara as $w) {
+        if($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah){
+          $bobotBagiW = $bobotAsal / $jumlah;
+          $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
+          break;
+        }
+      }
+
+      $bobotAsal=$bobotCollect[3]->bobot;
+      foreach ($presentasi as $pr) {
+        if($dPen->nilai_presentasi >= $pr->batas_atas and $dPen->nilai_presentasi <= $pr->batas_bawah){
+          $bobotBagiPr = $bobotAsal / $jumlah;
+          $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
+          break;
+        }
+      }
+
+      $hasilKaliAll =$hasilAkhirT*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
+      echo round($hasilKaliAll,4);?>
+       }
+
+       ?>
