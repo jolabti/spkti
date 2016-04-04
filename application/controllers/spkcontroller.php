@@ -138,7 +138,10 @@ class Spkcontroller extends CI_Controller {
  }
 
 
+ public function testHome(){
 
+	 $this->load->view('uploadview');
+ }
 
 
 
