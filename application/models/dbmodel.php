@@ -24,6 +24,12 @@ class Dbmodel extends CI_Model {
           return $query->result();
       }
 
+      function m_kosongkanData(){
+
+        $this->db->query('DELETE from penilaian');
+
+      }
+
       function m_databobotTeori(){
 
         $this->db->Select('bobot');
@@ -36,7 +42,10 @@ class Dbmodel extends CI_Model {
 
     /*=============================*/
 
-
+    public function removeQuote()
+        {
+            $this->db->empty_table('penilaian');
+        }
 
     /*
       PROSES PERHITUNGAN ALGORITMA

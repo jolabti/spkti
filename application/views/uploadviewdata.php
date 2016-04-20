@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SPKTI - Calas </title>
+  <title>Gentallela Alela! | </title>
 
   <!-- Bootstrap core CSS -->
 
@@ -23,10 +23,6 @@
   <link href="<?php echo base_url();?>css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
 
   <script src="<?php echo base_url();?>js/jquery.min.js"></script>
-
-
-
-
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -52,18 +48,18 @@
         <div class="left_col scroll-view">
 
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-caret-square-o-down"></i> <span>SPK-TI</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
           </div>
           <div class="clearfix"></div>
 
           <!-- menu prile quick info -->
           <div class="profile">
             <div class="profile_pic">
-              <img src="<?php echo base_url();?>image/user.png" alt="..." class="img-circle profile_img">
+              <img src="images/img.jpg" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
-              <h2>UG-LABTI</h2>
+              <h2>John Doe</h2>
             </div>
           </div>
           <!-- /menu prile quick info -->
@@ -74,19 +70,19 @@
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
             <div class="menu_section">
-              <h3>UNIVERSITAS GUNADARMA</h3>
+              <h3>General</h3>
               <ul class="nav side-menu">
-                <li><a><i class="fa fa-home"></i> Home  </a>
-                  <!-- <ul class="nav child_menu" style="display: none">
+                <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
                     <li><a href="index.html">Dashboard</a>
                     </li>
                     <li><a href="index2.html">Dashboard2</a>
                     </li>
                     <li><a href="index3.html">Dashboard3</a>
                     </li>
-                  </ul> -->
+                  </ul>
                 </li>
-                <li><a><i class="fa fa-edit"></i> Setting <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="form.html">General Form</a>
                     </li>
@@ -102,7 +98,7 @@
                     </li>
                   </ul>
                 </li>
-                <li><a><i class="fa fa-th"></i> Help <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="general_elements.html">General Elements</a>
                     </li>
@@ -124,15 +120,15 @@
                     </li>
                   </ul>
                 </li>
-                <!-- <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="tables.html">Tables</a>
                     </li>
                     <li><a href="tables_dynamic.html">Table Dynamic</a>
                     </li>
                   </ul>
-                </li> -->
-                <!-- <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                </li>
+                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu" style="display: none">
                     <li><a href="chartjs.html">Chart JS</a>
                     </li>
@@ -145,10 +141,10 @@
                     <li><a href="other_charts.html">Other Charts </a>
                     </li>
                   </ul>
-                </li> -->
+                </li>
               </ul>
             </div>
-            <!-- <div class="menu_section">
+            <div class="menu_section">
               <h3>Live On</h3>
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
@@ -183,7 +179,7 @@
                 <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
                 </li>
               </ul>
-            </div> -->
+            </div>
 
           </div>
           <!-- /sidebar menu -->
@@ -199,7 +195,7 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
               <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo base_url();?>index.php/spkcontroller/logout">
+            <a data-toggle="tooltip" data-placement="top" title="Logout">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
           </div>
@@ -217,9 +213,9 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-              <li  >
+              <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="<?php echo base_url();?>image/labti.jpg" alt="" width="30px" height="30px">John Doe
+                  <img src="images/img.jpg" alt="">John Doe
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
@@ -239,7 +235,7 @@
                 </ul>
               </li>
 
-              <!-- <li role="presentation" class="dropdown">
+              <li role="presentation" class="dropdown">
                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                   <i class="fa fa-envelope-o"></i>
                   <span class="badge bg-green">6</span>
@@ -248,7 +244,7 @@
                   <li>
                     <a>
                       <span class="image">
-                                        <img src="<?php   base_url();?>image/img.jpg" alt="Profile Image" />
+                                        <img src="images/img.jpg" alt="Profile Image" />
                                     </span>
                       <span>
                                         <span>John Smith</span>
@@ -262,7 +258,7 @@
                   <li>
                     <a>
                       <span class="image">
-                                        <img src="<?php   base_url();?>image/img.jpg" alt="Profile Image" />
+                                        <img src="images/img.jpg" alt="Profile Image" />
                                     </span>
                       <span>
                                         <span>John Smith</span>
@@ -276,7 +272,7 @@
                   <li>
                     <a>
                       <span class="image">
-                                        <img src="<?php   base_url();?>image/img.jpg" alt="Profile Image" />
+                                        <img src="images/img.jpg" alt="Profile Image" />
                                     </span>
                       <span>
                                         <span>John Smith</span>
@@ -290,7 +286,7 @@
                   <li>
                     <a>
                       <span class="image">
-                                        <img src="<?php   base_url();?>image/img.jpg" alt="Profile Image" />
+                                        <img src="images/img.jpg" alt="Profile Image" />
                                     </span>
                       <span>
                                         <span>John Smith</span>
@@ -310,7 +306,7 @@
                     </div>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
             </ul>
           </nav>
@@ -322,16 +318,12 @@
       <!-- page content -->
       <div class="right_col" role="main">
         <div class="">
-
           <div class="page-title">
             <div class="title_left">
               <h3>
-                    SISTEM PENUNJANG KEPUTUSAN
+                    Invoice
                     <small>
-                        Penerimaan Calon Asisten Laboratorium Teknik Informatika
-                    </small>
-                    <small>
-                        @UG_Labti
+                        Some examples to get you started
                     </small>
                 </h3>
             </div>
@@ -349,248 +341,14 @@
           </div>
           <div class="clearfix"></div>
 
-
           <div class="row">
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>KRITERIA TEORI (C1) <small>-------------------</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-
-                  <table class="table" id="example" >
-                    <thead>
-
-                      <tr>
-                        <th>No.</th>
-                        <th>Rentang</th>
-                        <th>Bobot</th>
-                      </tr>
-
-                    </thead>
-
-                    <tbody>
-                      <?php $no=1;?>
-                      <?php foreach ($teori as $key ) {
-
-                     ?>
-                      <tr>
-                        <th scope="row"><?php echo $no;?></th>
-                        <td><?php echo $key->batas_bawah ;?> - <?php echo $key->batas_atas ;?> </td>
-                        <td><?php echo $key->bobot;?></td>
-                      </tr>
-
-                    <?php
-                      $no++;
-                   }?>
-
-
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>KRITERIA PRAKTEK (C2) <small>-------------------</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-
-                  <table class="table table-striped">
-                    <thead>
-
-                      <tr>
-                        <th>No.</th>
-                        <th>Rentang</th>
-                        <th>Bobot</th>
-                      </tr>
-
-                    </thead>
-
-                    <tbody>
-                      <?php $no=1;?>
-                      <?php foreach ($teori as $key ) {
-
-                     ?>
-                      <tr>
-                        <th scope="row"><?php echo $no;?></th>
-                        <td><?php echo $key->batas_bawah ;?> - <?php echo $key->batas_atas ;?> </td>
-                        <td><?php echo $key->bobot;?></td>
-                      </tr>
-
-                    <?php
-                      $no++;
-                   }?>
-
-
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>KRITERIA WAWANCARA <small>C3</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-                  <table class="table table-hover">
-                    <thead>
-
-                      <tr>
-                        <th>No.</th>
-                        <th>Rentang</th>
-                        <th>Bobot</th>
-                      </tr>
-
-                    </thead>
-
-                    <tbody>
-                      <?php $no=1;?>
-                      <?php foreach ($teori as $key ) {
-
-                     ?>
-                      <tr>
-                        <th scope="row"><?php echo $no;?></th>
-                        <td><?php echo $key->batas_bawah ;?> - <?php echo $key->batas_atas ;?> </td>
-                        <td><?php echo $key->bobot;?></td>
-                      </tr>
-
-                    <?php
-                      $no++;
-                   }?>
-
-
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="x_panel">
-                <div class="x_title">
-                  <h2>KRITERIA PRESENTASI <small>C4</small></h2>
-                  <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Settings 1</a>
-                        </li>
-                        <li><a href="#">Settings 2</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
-                    </li>
-                  </ul>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="x_content">
-
-                  <table class="table table-bordered"  >
-                    <thead>
-
-                      <tr>
-                        <th>No.</th>
-                        <th>Rentang</th>
-                        <th>Bobot</th>
-                      </tr>
-
-                    </thead>
-
-                    <tbody>
-                      <?php $no=1;?>
-                      <?php foreach ($teori as $key ) {
-
-                     ?>
-                      <tr>
-                        <th scope="row"><?php echo $no;?></th>
-                        <td><?php echo $key->batas_bawah ;?> - <?php echo $key->batas_atas ;?> </td>
-                        <td><?php echo $key->bobot;?></td>
-                      </tr>
-
-                    <?php
-                      $no++;
-                   }?>
-
-
-                    </tbody>
-                  </table>
-
-                </div>
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
 
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="x_panel">
                 <div class="x_title">
-                  <h2>Table design <small>Custom design</small></h2>
+                  <h2>Daily active users <small>Sessions</small></h2>
                   <ul class="nav navbar-right panel_toolbox">
-                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    <li><a href="#"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
@@ -601,31 +359,34 @@
                         </li>
                       </ul>
                     </li>
-                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    <li><a href="#"><i class="fa fa-close"></i></a>
                     </li>
                   </ul>
                   <div class="clearfix"></div>
                 </div>
 
                 <div class="x_content">
-
-                  <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
-                  <table class="table table-striped responsive-utilities jambo_table bulk_action" id="example1">
+                  <table id="example" class="table table-striped responsive-utilities jambo_table">
                     <thead>
                       <tr class="headings">
-
-                        <th  >NPM </th>
-                        <th >NAMA CALAS </th>
-                        <th  >NILAI TEORI (C1) </th>
-                        <th  >NILAI PRAKTEK (C2) </th>
-                        <th  >NILAI WAWANCARA (C3) </th>
-                        <th >NILAI PRESENTASI (C4) </th>
-                        <th >HASIL AWAL 1 </th>
-                        <th >Vi </th>
-                        <th >Hasil Awal 2 </th>
-                        <th > >Hasil Akhir</span></th>
-
+                        <th>
+                          <input type="checkbox" class="tableflat">
+                        </th>
+                        <th>NPM </th>
+                        <th>NAMA CALAS </th>
+                        <th>NILAI TEORI </th>
+                        <th>NILAI PRAKTEK </th>
+                        <th>NILAI WAWANCARA</th>
+                        <th>NILAI PRESENTASI</th>
+                        <th >HASIL AWAL 1
+                        </th>
+                        <!-- <th >
+                          Vi
+                        </th>
+                        <!-- <th >HASIL AWAL 2 -->
+                        <!-- </th>
+                        <th >HASIL AKHIR
+                        </th> --> -->
                       </tr>
                     </thead>
 
@@ -681,175 +442,38 @@
                   }
                   ?>
 
-
-
-
-
-
                     <tbody>
-              <?php  foreach ($dataPenilaian as $dPen) {
-              $jumlah = $jumlahbobot[0]->score;
-              ?>
+                      <?php  foreach ($dataPenilaian as $dPen) {
+                      $jumlah = $jumlahbobot[0]->score;
+                      ?>
+                      <tr class="even pointer">
+                        <td class="a-center ">
+                          <input type="checkbox" class="tableflat">
+                        </td>
+                        <td><?php print $dPen->npm; ?></td>
+                        <td>May 23, 2014 11:47:56 PM </td>
+                        <td>121000210 <i class="success fa fa-long-arrow-up"></i>
+                        </td>
+                        <td>John Blank L</td>
+                        <td>Paid</td>
+                        <td>$7.45</td>
+                        <td><a href="#">View</a>
+                        </td>
+                      </tr>
 
-                        <tr>
-                          <td>
-                            <?php print $dPen->npm; ?>
-                          </td>
-                          <td>
-                            <?php print $dPen->nama_calas; ?>
-                          </td>
-                          <td>
-                            <?php print $dPen->kelas; ?>
-                          </td>
-                          <td>
-                            <?php
-                  $bobotAsal = $bobotCollect[0]->bobot;
-
-                  foreach ($teori as $t) {
-                    //echo $dPen->nilai_presentasi;
-
-
-                    if($dPen->nilai_teori >= $t->batas_bawah and $dPen->nilai_teori <= $t->batas_atas){
-                      $bobotBagi = $bobotAsal / $jumlah;
-                      $hasilAkhirT  = round(pow($t->bobot, $bobotBagi), 3);
-
-                      echo $t->bobot . 'Nilai Bobot Teori';
-                      echo "<br/>";
-                      echo $bobotAsal . 'bobot asal';
-                      echo "<br/>";
-
-                      echo $bobotBagi . 'bobot bagi Teori' ;
-                      echo "<br/>";
-
-                      echo $jumlah . 'jumlah';
-                      echo "<br/>";
-                      echo $hasilAkhirT;
-                      break;
-                    }
-                  }
-                  $bobotAsal=0;
-                  ?>
-                          </td>
-                          <td>
-                            <?php
-                  $bobotAsal = $bobotCollect[1]->bobot;
-                  foreach ($praktek as $p) {
-                    //echo $dPen->nilai_presentasi;
-                    if($dPen->nilai_praktek >= $p->batas_bawah and $dPen->nilai_praktek <= $p->batas_atas){
-                      $bobotBagiP = $bobotAsal / $jumlah;
-                      $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
-                      echo $p->bobot .'bobot Kriteria Praktek';
-                      echo "<br/>";
-
-                      echo $bobotAsal .'bobot Asal';
-                      echo "<br/>";
-
-                      echo $bobotBagiP .'bobot bagi Presentasi';
-                      echo "<br/>";
-                      echo $jumlah ."jumlah bobot kriteria";
-                      echo "<br/>";
-                      echo $hasilAkhirP;
-                      break;
-                    }
-                  }
-                  $bobotAsal=0;
-                  ?>
-
-                          </td>
-                          <td>
-                            <?php
-
-                  $bobotAsal=$bobotCollect[2]->bobot;;
-                  foreach ($wawancara as $w) {
-                    //echo $dPen->nilai_presentasi;
-                    if($dPen->nilai_wawancara >= $w->batas_bawah and $dPen->nilai_wawancara <= $w->batas_atas){
-                      $bobotBagiW = $bobotAsal / $jumlah;
-                      $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
-                      echo $w->bobot .'Bobot Kriteria';
-                      echo "<br/>";
-                      echo $bobotAsal .'Bobot Asal';
-                      echo "<br/>";
-                      echo $bobotBagiW .'bobot bagi Wawancara';
-                      echo "<br/>";
-                      echo $jumlah ."jumlah bobot kriteria";
-                      echo "<br/>";
-                      echo $hasilAkhirW;
-                      break;
-                    }
-                  }
-
-                  $bobotAsal=0;
-                  ?>
-
-                          </td>
-                          <td>
-
-                            <?php
-                  $bobotAsal=$bobotCollect[3]->bobot;
-                  foreach ($presentasi as $pr) {
-                    //echo $dPen->nilai_presentasi;
-                    if($dPen->nilai_presentasi >= $pr->batas_bawah and $dPen->nilai_presentasi <= $pr->batas_atas){
-                      $bobotBagiPr = $bobotAsal / $jumlah;
-                      $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
-                      echo $pr->bobot ."Bobot Kriteria Presentasi";
-                      echo "<br/>";
-                      echo $bobotBagiPr ."bobotBagiPr";
-                      echo "<br/>";
-                      echo $bobotAsal ."Bobot Asal";
-                      echo "<br/>";
-                      echo $jumlah ."jumlah bobot kriteria";
-                      echo "<br/>";
-                      echo $hasilAkhirPr;
-                      break;
-                    }
-                  }
-                  ?>
-                          </td>
-                          <td>
-                            <?php
-                    $hasilKaliAll =$hasilAkhirT*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
-                    echo round($hasilKaliAll,4) . 'cek';?>
-                              <!-- Mencetak hasil perkalian Si -->
-                          </td>
-                          <td>
-                            <?php
-                    echo round($hasilTambah, 4) . '|';
-                  //  echo round(round($hasilKaliAll,4)/$hasilTambah, 4);
-                    ?>
-                          </td>
-
-                          <td>
-                            <?php   echo round(round($hasilKaliAll,4)/$hasilTambah, 4);?>
-                          </td>
-                        </tr>
-
-                        <?php }?>
                     </tbody>
 
                   </table>
-
-
                 </div>
               </div>
             </div>
+
+            <br />
+            <br />
+            <br />
+
           </div>
-
         </div>
-        <a href="<?php echo base_url();?>index.php/spkcontroller/submit" class="btn btn-warning">DELETE DATAS</a>
-        <br>
-        <h2>UPLOAD DATA CALAS</h2>
-
-        <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadRekapitulasiPenilaian" enctype="multipart/form-data">
-          <input type="file" name="userfile">
-          <br>
-          <br>
-          <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
-        </form>
-
-                      <div class="progress">
-                        <div class="bar"></div>
-                        <div class="percent">0%</div>
-                      </div>
         <!-- footer content -->
         <footer>
           <div class="copyright-info">
@@ -872,6 +496,7 @@
     <div class="clearfix"></div>
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
+
   <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 
   <!-- bootstrap progress js -->
@@ -899,7 +524,7 @@
 
     var asInitVals = new Array();
     $(document).ready(function() {
-      var oTable = $('#example1').dataTable({
+      var oTable = $('#example').dataTable({
         "oLanguage": {
           "sSearch": "Search all columns:"
         },
@@ -936,42 +561,6 @@
       });
     });
   </script>
-
-
-  <!-- <script src="http://malsup.github.com/jquery.form.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
-  <script src="http://malsup.github.com/jquery.form.js"></script>
-  <script>
-    (function() {
-
-      var bar = $('.bar');
-      var percent = $('.percent');
-      var status = $('#status');
-
-      $('form').ajaxForm({
-        beforeSend: function() {
-          status.empty();
-          var percentVal = '0%';
-          bar.width(percentVal)
-          percent.html(percentVal);
-        },
-        uploadProgress: function(event, position, total, percentComplete) {
-          var percentVal = percentComplete + '%';
-          bar.width(percentVal)
-          percent.html(percentVal);
-        },
-        success: function() {
-          var percentVal = '100%';
-          bar.width(percentVal)
-          percent.html(percentVal);
-        },
-        complete: function(xhr) {
-          status.html(xhr.responseText);
-        }
-      });
-
-    })();
-  </script> -->
 </body>
 
 </html>

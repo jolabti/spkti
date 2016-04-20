@@ -66,7 +66,7 @@ class Spkcontroller extends CI_Controller {
 																}
 
 
-																redirect('spkcontroller/get_data_penelitian');
+																redirect('spkcontroller/testHome');
 														}
 												}
 
@@ -138,10 +138,50 @@ class Spkcontroller extends CI_Controller {
  }
 
 
- public function testHome(){
+ public function submit()
+{
+        $this->dbmodel->removeQuote();
+				$this->testHome();
+}
 
-	 $this->load->view('uploadview');
+
+ public function testHome(){
+	 $data['jumlahbobot'] = $this->dbmodel->m_sumbobotkriteria();
+	 $data['bobotCollect'] = $this->dbmodel->m_databobotkriteria(); //Bobot Kriteria
+	 $data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
+	 $data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
+
+	 $data['presentasi'] = $this->dbmodel->m_dataKriteriaPresentasi();
+	 $data['wawancara'] = $this->dbmodel->m_dataKriteriaWawancara();
+	 $data['praktek'] = $this->dbmodel->m_dataKriteriaPraktek();
+	 $data['teori'] = $this->dbmodel->m_dataKriteriaTeori();
+
+	 $this->load->view('uploadview',  $data);
  }
+
+ public function testHomeDataTable(){
+	 $data['jumlahbobot'] = $this->dbmodel->m_sumbobotkriteria();
+	 $data['bobotCollect'] = $this->dbmodel->m_databobotkriteria(); //Bobot Kriteria
+	 $data['dataPenilaian']= $this->dbmodel->m_getDataPenilaian();
+	 $data['bobotPembagiKriteria'] = $this->dbmodel->m_databobotTeori();
+
+	 $data['presentasi'] = $this->dbmodel->m_dataKriteriaPresentasi();
+	 $data['wawancara'] = $this->dbmodel->m_dataKriteriaWawancara();
+	 $data['praktek'] = $this->dbmodel->m_dataKriteriaPraktek();
+	 $data['teori'] = $this->dbmodel->m_dataKriteriaTeori();
+
+	 $this->load->view('uploadviewdata',  $data);
+ }
+
+ public function deleteData(){
+
+	 	$this->load->dbmodel();
+		$this->dbmodel->m_kosongkanData();
+		redirect('spkcontroller');
+
+ }
+
+
 
 
 

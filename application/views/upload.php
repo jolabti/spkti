@@ -17,72 +17,72 @@
   <link href=" <?php echo base_url();?>css/modify.css" rel="stylesheet">
 
   <style type="text/css">
-  .list-group-item {
-    background: #001ee0;
-  }
-
-  #sidebar {
-    position: absolute;
-    height: 40%;
-  }
-
-  .list-group-item > a {
-    color: #ffffff;
-    text-decoration: none;
-    how
-  }
-
-  .list-group-item > a:hover {
-    color: #adeade;
-    text-decoration: none;
-    how
-  }
-
-  input.search-query {
-    padding-left: 26px;
-  }
-
-  form.form-search {
-    position: relative;
-    content: '';
-    display: inline;
-    width: 14px;
-    height: 50px;
-    background: #acdcdcd;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    opacity: 1.5;
-    z-index: 100;
-  }
-
-  #partform {
-    margin-left: 30%;
-    height: 700px;
-    background: #cdcdcd;
-    padding-left: 1%;
-    padding-top: 5%;
-    padding-right: : 5%;
-    padding-bottom: 5%;
-    width: 725;
-    display: block;
-    position: flex;
-    /*float: left;*/
-    margin-top: 2%;
-  }
-
-  @media (max-width: 750px) {
-    #partform {
-      margin-left: 0%;
-      margin-top: 80%;
-      width: 450px;
-      border-radius: 20px;
+    .list-group-item {
+      background: #001ee0;
     }
-  }
 
-  .navbar .navbar-default {
-    background: #44ee44;
-  }
+    #sidebar {
+      position: absolute;
+      height: 40%;
+    }
+
+    .list-group-item > a {
+      color: #ffffff;
+      text-decoration: none;
+      how
+    }
+
+    .list-group-item > a:hover {
+      color: #adeade;
+      text-decoration: none;
+      how
+    }
+
+    input.search-query {
+      padding-left: 26px;
+    }
+
+    form.form-search {
+      position: relative;
+      content: '';
+      display: inline;
+      width: 14px;
+      height: 50px;
+      background: #acdcdcd;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      opacity: 1.5;
+      z-index: 100;
+    }
+
+    #partform {
+      margin-left: 30%;
+      height: 700px;
+      background: #cdcdcd;
+      padding-left: 1%;
+      padding-top: 5%;
+      padding-right: : 5%;
+      padding-bottom: 5%;
+      width: 725;
+      display: block;
+      position: flex;
+      /*float: left;*/
+      margin-top: 2%;
+    }
+
+    @media (max-width: 750px) {
+      #partform {
+        margin-left: 0%;
+        margin-top: 80%;
+        width: 450px;
+        border-radius: 20px;
+      }
+    }
+
+    .navbar .navbar-default {
+      background: #44ee44;
+    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -100,14 +100,14 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
   <script>
-  function printContent(el){
-	var restorepage = document.body.innerHTML;
-	var printcontent = document.getElementById(el).innerHTML;
-	document.body.innerHTML = printcontent;
-	window.print();
-	document.body.innerHTML = restorepage;
-}
-</script>
+    function printContent(el) {
+      var restorepage = document.body.innerHTML;
+      var printcontent = document.getElementById(el).innerHTML;
+      document.body.innerHTML = printcontent;
+      window.print();
+      document.body.innerHTML = restorepage;
+    }
+  </script>
 </head>
 
 <body>
@@ -143,7 +143,7 @@
   </nav>
 
 
-  <div class="container"  >
+  <div class="container">
 
     <div class="jumbotron" style="padding-left:2.5%;">
       <img src="<?php echo base_url();?>image/lolabti.jpg" class="img-circle" alt="Cinque Terre" width="80" height="80">
@@ -192,120 +192,120 @@
               <div class="alert alert-error">
                 <?php echo $error; ?>
               </div>
-            <?php endif; ?>
-            <?php if ($this->session->flashdata('success') == TRUE): ?>
-              <div class="alert alert-success">
-                <?php echo $this->session->flashdata('success'); ?>
-              </div>
-            <?php endif; ?>
+              <?php endif; ?>
+                <?php if ($this->session->flashdata('success') == TRUE): ?>
+                  <div class="alert alert-success">
+                    <?php echo $this->session->flashdata('success'); ?>
+                  </div>
+                  <?php endif; ?>
 
-            <h2>UPLOAD DATA CALAS</h2>
-            <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadRekapitulasiPenilaian" enctype="multipart/form-data">
-              <input type="file" name="userfile">
-              <br>
-              <br>
-              <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
-            </form>
+                    <h2>UPLOAD DATA CALAS</h2>
+                    <form method="post" action="<?php echo base_url() ?>index.php/spkcontroller/uploadRekapitulasiPenilaian" enctype="multipart/form-data">
+                      <input type="file" name="userfile">
+                      <br>
+                      <br>
+                      <input type="submit" name="submit" value="UPLOAD" class="btn btn-primary">
+                    </form>
 
-            <br>
-            <br>
+                    <br>
+                    <br>
 
-            <div id="div1">
+                    <div id="div1">
 
-            <table class="table table-striped table-hover table-bordered">
-              <caption>Penilaian Calas</caption>
-              <thead>
-                <tr>
-                  <th>NPM  </th>
-                  <th>Nama Calas  </th>
-                  <th>Kelas  </th>
-                  <th>Nilai Teori (C1)</th>
-                  <th>Nilai Praktek (C2)</th>
-                  <th>Nilai Wawancara (C3)</th>
-                  <th>Nilai Presentasi (C4)  </th>
-                  <th> Hasil               </th>
-                  <th> Vi              </th>
-                  <th>Nilai Akhir              </th>
+                      <table class="table table-striped table-hover table-bordered">
+                        <caption>Penilaian Calas</caption>
+                        <thead>
+                          <tr>
+                            <th>NPM </th>
+                            <th>Nama Calas </th>
+                            <th>Kelas </th>
+                            <th>Nilai Teori (C1)</th>
+                            <th>Nilai Praktek (C2)</th>
+                            <th>Nilai Wawancara (C3)</th>
+                            <th>Nilai Presentasi (C4) </th>
+                            <th> Hasil </th>
+                            <th> Vi </th>
+                            <th>Nilai Akhir </th>
 
-                </tr>
+                          </tr>
 
-                <?php
+                          <?php
 
-    $hasilKaliAll = 1;
-    $hasilTambah = 0;
-    foreach ($dataPenilaian as $dPen) {
-        $jumlah = $jumlahbobot[0]->score;
-        $bobotAsal = $bobotCollect[0]->bobot;
+                $hasilKaliAll = 1;
+                $hasilTambah = 0;
+                foreach ($dataPenilaian as $dPen) {
+                    $jumlah = $jumlahbobot[0]->score;
+                    $bobotAsal = $bobotCollect[0]->bobot;
 
-    foreach ($teori as $t) {
+                foreach ($teori as $t) {
 
-        if ($dPen->nilai_teori >= $t->batas_atas and $dPen->nilai_teori <= $t->batas_bawah) {
-            $bobotBagi = $bobotAsal / $jumlah;
-            $hasilAkhirT = round(pow($t->bobot, $bobotBagi), 3);
-            break;
-        }
-    }
-    $bobotAsal = 0;
+                    if ($dPen->nilai_teori >= $t->batas_bawah and $dPen->nilai_teori <= $t->batas_atas) {
+                        $bobotBagi = $bobotAsal / $jumlah;
+                        $hasilAkhirT = round(pow($t->bobot, $bobotBagi), 3);
+                        break;
+                    }
+                }
+                $bobotAsal = 0;
 
-    $bobotAsal = $bobotCollect[1]->bobot;
-    foreach ($praktek as $p) {
-        if ($dPen->nilai_praktek >= $p->batas_atas and $dPen->nilai_praktek <= $p->batas_bawah) {
-            $bobotBagiP = $bobotAsal / $jumlah;
-            $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
-            break;
-        }
-    }
-    $bobotAsal = 0;
+                $bobotAsal = $bobotCollect[1]->bobot;
+                foreach ($praktek as $p) {
+                    if ($dPen->nilai_praktek >= $p->batas_bawah and $dPen->nilai_praktek <= $p->batas_atas) {
+                        $bobotBagiP = $bobotAsal / $jumlah;
+                        $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
+                        break;
+                    }
+                }
+                $bobotAsal = 0;
 
-    $bobotAsal = $bobotCollect[2]->bobot;
-    foreach ($wawancara as $w) {
-        if ($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah) {
-            $bobotBagiW = $bobotAsal / $jumlah;
-            $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
-            break;
-        }
-    }
+                $bobotAsal = $bobotCollect[2]->bobot;
+                foreach ($wawancara as $w) {
+                    if ($dPen->nilai_wawancara >= $w->batas_bawah and $dPen->nilai_wawancara <= $w->batas_atas) {
+                        $bobotBagiW = $bobotAsal / $jumlah;
+                        $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
+                        break;
+                    }
+                }
 
-    $bobotAsal = $bobotCollect[3]->bobot;
-    foreach ($presentasi as $pr) {
-        if ($dPen->nilai_presentasi >= $pr->batas_atas and $dPen->nilai_presentasi <= $pr->batas_bawah) {
-            $bobotBagiPr = $bobotAsal / $jumlah;
-            $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
-            break;
-        }
-    }
+                $bobotAsal = $bobotCollect[3]->bobot;
+                foreach ($presentasi as $pr) {
+                    if ($dPen->nilai_presentasi >= $pr->batas_bawah and $dPen->nilai_presentasi <= $pr->batas_atas) {
+                        $bobotBagiPr = $bobotAsal / $jumlah;
+                        $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
+                        break;
+                    }
+                }
 
-    $hasilKaliAll = $hasilAkhirT * $hasilAkhirP * $hasilAkhirW * $hasilAkhirPr;
-    $hasilTambah = $hasilTambah + $hasilKaliAll;
-    $hasilKaliAll = 1;
-}
-?>
+                $hasilKaliAll = $hasilAkhirT * $hasilAkhirP * $hasilAkhirW * $hasilAkhirPr;
+                $hasilTambah = $hasilTambah + $hasilKaliAll;
+                $hasilKaliAll = 1;
+            }
+            ?>
 
-              </thead>
-              <tbody>
-                <?php  foreach ($dataPenilaian as $dPen) {
+                        </thead>
+                        <tbody>
+                          <?php  foreach ($dataPenilaian as $dPen) {
                   $jumlah = $jumlahbobot[0]->score;
                   ?>
 
-                  <tr>
-                    <td>
-                      <?php print $dPen->npm; ?>
-                    </td>
-                    <td>
-                      <?php print $dPen->nama_calas; ?>
-                    </td>
-                    <td>
-                      <?php print $dPen->kelas; ?>
-                    </td>
-                    <td>
-                      <?php
+                            <tr>
+                              <td>
+                                <?php print $dPen->npm; ?>
+                              </td>
+                              <td>
+                                <?php print $dPen->nama_calas; ?>
+                              </td>
+                              <td>
+                                <?php print $dPen->kelas; ?>
+                              </td>
+                              <td>
+                                <?php
                       $bobotAsal = $bobotCollect[0]->bobot;
 
                       foreach ($teori as $t) {
                         //echo $dPen->nilai_presentasi;
 
 
-                        if($dPen->nilai_teori >= $t->batas_atas and $dPen->nilai_teori <= $t->batas_bawah){
+                        if($dPen->nilai_teori >= $t->batas_bawah and $dPen->nilai_teori <= $t->batas_atas){
                           $bobotBagi = $bobotAsal / $jumlah;
                           $hasilAkhirT  = round(pow($t->bobot, $bobotBagi), 3);
 
@@ -324,16 +324,14 @@
                         }
                       }
                       $bobotAsal=0;
-
-
                       ?>
-                    </td>
-                    <td>
-                      <?php
+                              </td>
+                              <td>
+                                <?php
                       $bobotAsal = $bobotCollect[1]->bobot;
                       foreach ($praktek as $p) {
                         //echo $dPen->nilai_presentasi;
-                        if($dPen->nilai_praktek >= $p->batas_atas and $dPen->nilai_praktek <= $p->batas_bawah){
+                        if($dPen->nilai_praktek >= $p->batas_bawah and $dPen->nilai_praktek <= $p->batas_atas){
                           $bobotBagiP = $bobotAsal / $jumlah;
                           $hasilAkhirP = round(pow($p->bobot, $bobotBagiP), 3);
                           echo $p->bobot .'bobot Kriteria Praktek';
@@ -353,14 +351,14 @@
                       $bobotAsal=0;
                       ?>
 
-                    </td>
-                    <td>
-                      <?php
+                              </td>
+                              <td>
+                                <?php
 
                       $bobotAsal=$bobotCollect[2]->bobot;;
                       foreach ($wawancara as $w) {
                         //echo $dPen->nilai_presentasi;
-                        if($dPen->nilai_wawancara >= $w->batas_atas and $dPen->nilai_wawancara <= $w->batas_bawah){
+                        if($dPen->nilai_wawancara >= $w->batas_bawah and $dPen->nilai_wawancara <= $w->batas_atas){
                           $bobotBagiW = $bobotAsal / $jumlah;
                           $hasilAkhirW = round(pow($w->bobot, $bobotBagiP), 3);
                           echo $w->bobot .'Bobot Kriteria';
@@ -379,14 +377,14 @@
                       $bobotAsal=0;
                       ?>
 
-                    </td>
-                    <td>
+                              </td>
+                              <td>
 
-                      <?php
+                                <?php
                       $bobotAsal=$bobotCollect[3]->bobot;
                       foreach ($presentasi as $pr) {
                         //echo $dPen->nilai_presentasi;
-                        if($dPen->nilai_presentasi >= $pr->batas_atas and $dPen->nilai_presentasi <= $pr->batas_bawah){
+                        if($dPen->nilai_presentasi >= $pr->batas_bawah and $dPen->nilai_presentasi <= $pr->batas_atas){
                           $bobotBagiPr = $bobotAsal / $jumlah;
                           $hasilAkhirPr = round(pow($pr->bobot, $bobotBagiPr), 3);
                           echo $pr->bobot ."Bobot Kriteria Presentasi";
@@ -402,30 +400,30 @@
                         }
                       }
                       ?>
-                    </td>
-                      <td>
-                        <?php
+                              </td>
+                              <td>
+                                <?php
                         $hasilKaliAll =$hasilAkhirT*$hasilAkhirP*$hasilAkhirW*$hasilAkhirPr ;
                         echo round($hasilKaliAll,4) . 'cek';?>
-                        <!-- Mencetak hasil perkalian Si -->
-                      </td>
-                      <td>
-                        <?php
+                                  <!-- Mencetak hasil perkalian Si -->
+                              </td>
+                              <td>
+                                <?php
                         echo round($hasilTambah, 4) . '|';
                       //  echo round(round($hasilKaliAll,4)/$hasilTambah, 4);
                         ?>
-                      </td>
+                              </td>
 
-                      <td>
-                        <?php   echo round(round($hasilKaliAll,4)/$hasilTambah, 4);?>
-                      </td>
-                    </tr>
+                              <td>
+                                <?php   echo round(round($hasilKaliAll,4)/$hasilTambah, 4);?>
+                              </td>
+                            </tr>
 
-                  <?php }?>
-                </tbody>
-                <!-- <div class="halaman">Halaman : < /div> -->
-              </table>
-            </div>
+                            <?php }?>
+                        </tbody>
+                        <!-- <div class="halaman">Halaman : < /div> -->
+                      </table>
+                    </div>
           </div>
 
         </div>
@@ -434,9 +432,9 @@
 
 
     </div>
-    </div>
+  </div>
 
-    <script>
+  <script>
     $("#right").click(function() {
       $("#sidebar").show({
         "left": "+=100px"
@@ -454,9 +452,9 @@
       $('#partform').css("margin-left", '0%');
 
     });
-    </script>
-    <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+  </script>
+  <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
 
-  </body>
+</body>
 
-  </html>
+</html>
